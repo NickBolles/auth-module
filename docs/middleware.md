@@ -19,6 +19,23 @@ router: {
 }
 ```
 
+You can also import the middleware directly and call it from something like nuxtClientInit. This is useful for situations when the server middleware isn't called. For example in `store/index.js`
+
+```js
+import AuthMiddleware from "@nuxtjs/auth/lib/core/hook";
+import Vuex from 'vuex'
+
+export default const createStore = () => {
+  return new Vuex.Store({
+    actions: {
+      async nuxtClientInit({ dispatch }, context) {
+        await AuthMiddleware(context);
+      }
+    }
+  })
+
+```
+
 In case of global usage, You can set `auth` option to `false` in a specific component and the middleware will ignore that route.
 
 ```js
