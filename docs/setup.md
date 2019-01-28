@@ -26,3 +26,6 @@ auth: {
 ```
 
 ℹ️ When adding `auth-module` to a new Nuxt project ensure you have activated the Vuex store. More information on how to do that can be found on the [Nuxt Getting Started Guide](https://nuxtjs.org/guide/vuex-store).
+
+## Code Sandbox example
+https://codesandbox.io/s/v097np980
